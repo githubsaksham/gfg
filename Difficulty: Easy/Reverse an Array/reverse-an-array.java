@@ -1,21 +1,19 @@
 class Solution {
-    public void swap(int arr[], int i,int j){
-        int temp=arr[i];
-        arr[i]=arr[j];
-        arr[j]=temp;
+    
+    public void swap(int[] temp,int first, int last){
+        int local = temp[first];
+        temp[first]=temp[last];
+        temp[last]=local;
     }
-    
-    
-    
     public void reverseArray(int arr[]) {
         // code here
-        int start=0;
-        int end=arr.length-1;
-        while(start<end){
-            swap(arr,start,end);
-            start++;
-            end--;
+        int length= arr.length;
+        int n = arr.length-1;
+         
+        for(int i=0;i<length/2;i++){
+            swap(arr,i,n-i);
         }
+        
         
     }
 }
